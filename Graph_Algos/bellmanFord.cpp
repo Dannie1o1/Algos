@@ -55,7 +55,7 @@ int main()
 
     
     //File I/O
-    freopen("../intput.txt", "r", stdin);
+    freopen("../input.txt", "r", stdin);
     freopen("../output.txt", "w", stdout);
     
     //cout << "Hello world \n";
