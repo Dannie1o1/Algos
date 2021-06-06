@@ -2,6 +2,11 @@
     "files.associations": {
         "ostream": "cpp",
         "iosfwd": "cpp",
-        "streambuf": "cpp"
+        "streambuf": "cpp",
+        "tuple": "cpp",
+        "vector": "cpp",
+        "iterator": "cpp",
+        "queue": "cpp",
+        "iostream": "cpp"
     }
 }
