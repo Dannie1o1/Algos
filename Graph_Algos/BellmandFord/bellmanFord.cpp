@@ -3,10 +3,10 @@
 #include <tuple>
 
 using namespace std;
-#define N 7
-#define INF INT_MAX
+#define N 5
+#define INF 1000000000
 
-int dist[N];
+int dist[N+1];
 vector<tuple<int, int, int>> edges;
 
 vector<tuple<int, int, int>> createGraph()
@@ -28,13 +28,13 @@ vector<tuple<int, int, int>> createGraph()
 //Finds the shortest paths from at starting node x to all other nodes on the graph
 void bl(int x)
 {
-    for (int i = 1; i <= N - 1; i++)
+    for (int i = 1; i <= N; i++)
     {
         dist[i] = INF;
     }
     dist[x] = 0;
 
-    for (int i = 1; i <= N - 1; i++)
+    for (int i = 1; i <= N-1; i++)
     {
         //cout << "i = " << i << "\n";
         for (auto e : edges)
@@ -42,7 +42,7 @@ void bl(int x)
             int a, b, w;
             tie(a, b, w) = e; //Asigned tuple params into the variables
             dist[b] = min(dist[b], dist[a] + w);
-            //cout << "dist[" << b << "] = " << dist[b] << "\n" ;
+            //cout << "a = " << a << " dist[" << b << "] = " << dist[b] << "\n" ;
         }
     }
 }
@@ -55,21 +55,21 @@ int main()
 
     
     //File I/O
-    freopen("../input.txt", "r", stdin);
-    freopen("../output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
     
     //cout << "Hello world \n";
     edges = createGraph();
-    int startingNode = 1; 
+    int startingNode = 3; 
     //cout << "startingNode = " << startingNode << "\n";
     bl(startingNode);
 
-    for (auto u : dist)
+    for (int i = 1; i <= N; i++)
     {
-        cout << u  << "\n";
+        cout << dist[i]  << "\n";
     }
 
-    cout << "Program terminating";
+    //cout << "Program terminating";
     return 0;
     
 }
