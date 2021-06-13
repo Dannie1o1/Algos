@@ -85,4 +85,3 @@ Temporary Items
 ### Custom Files
 *.txt
 !input.txt
-!output.txt
