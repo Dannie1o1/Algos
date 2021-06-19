@@ -20,7 +20,7 @@ void search(int k, int n, vector<int> &subset)
 {
     if (k == n + 1)
     {
-        //process subsety
+        //process subset
         if (subset[k] == subset.empty())
         {
             cout << "empty";
@@ -45,3 +45,78 @@ void search(int k, int n, vector<int> &subset)
         search(k + 1, n, subset);
     }
 }
+
+// k = 1; n = 3;
+//search(1)
+    //k = 1 
+    //subset = 1
+    //search(2)
+        // k = 2
+        // subset = 1, 2
+        // search (3)
+            // k = 3
+            // subset = 1, 2, 3
+            // search (4)
+                //k = 4
+                // k == n+1 
+                //print subset (1,2,3)
+                //end of this call
+            //subset = 1,2
+            //search (4)
+                // k = 4
+                // k == n+1 
+                //print subset (1,2)
+                //end of this call
+            //end of this call
+        // subset = 1
+        // search (3)
+            // k = 3
+            // subset = 1,3
+            // search(4)
+                //k = 4
+                // k == n+1 
+                //print subset (1,3)
+                //end of this call
+            //subset = 1
+            // search(4)
+                // k = 4
+                // k == n+1 
+                //print subset (1)
+                //end of this call
+        //end of this call
+    //subset = empty
+    //search(2)
+        // k = 2
+        // subset = 2
+        // search(3)
+            // k = 3
+            // subset = 2, 3
+            // search (4)
+                // k = 4
+                // k == n+1
+                // print subset(2,3)
+                //end of this call
+            // subset = 2
+            // search(4)
+                // k = 4
+                // k == n+1
+                // print subset(2)
+                // end of this call
+            // end of this call
+        // subset = empty
+        // search(3)
+            // k = 3
+            // subset = 3
+            // search(4)
+                // print subset (3)
+                // end of this call
+            // subset = empty
+            // search(4)
+                // print subset (empty)
+                // end of this call
+            // end of this call
+        // end of this call
+    //end of this call
+
+
+
