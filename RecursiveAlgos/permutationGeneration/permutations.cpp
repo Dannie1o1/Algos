@@ -4,7 +4,7 @@
 using namespace std;
 
 class MySet{
-    private:
+    protected:
     vector<int> set;
 
     public:
@@ -26,45 +26,36 @@ class MySet{
         return set[i];
     }
 
-    vector<int> GetSet()
+    vector<int>& GetSet()
     {
         return set;
     }
 };
 
-class Permutation{
+class Permutation : public MySet {
     private:
     vector<bool> chosen;
     vector<int> permutation;
-    vector<int> currentSet;
 
     public:
-    Permutation()
+    Permutation(vector<int> &set):MySet(set)
     {
-    };
-
-    Permutation(MySet &set)
-    {
-        vector<bool> chosen(set.GetSize()+1, false);
-        this->chosen = chosen;
-        currentSet = set.GetSet();
-        //cout << "chosen's size: " << chosen.size() << endl;
-        //cout << "Set's size: " << currentSet.size() << endl;
+        chosen.resize(set.size()+1,false);
     }
     
     void Search()
     {
-        if(permutation.size() == currentSet.size())
+        if(permutation.size() == set.size())
         {
             PrintPerms();
         }
         else
         {
-            for (int i = 1; i <= currentSet.size(); i++)
+            for (int i = 1; i <= set.size(); i++)
             {
                 if (chosen[i] == true) continue;
                 chosen[i] = true;
-                permutation.push_back(i);
+                permutation.push_back(set[i-1]);
                 Search();
                 chosen[i] = false;
                 permutation.pop_back();
@@ -72,7 +63,7 @@ class Permutation{
         }
     }
 
-    protected:
+    private:
     void PrintPerms()
     {
         for (auto perm: permutation)
@@ -85,12 +76,9 @@ class Permutation{
 
 int main()
 {
-    vector<int> set = {1,2,3};
-
-    MySet s(set);
-    Permutation p(s);
-    p.Search();
-
+    vector<int> set = {4,5,6};
+    Permutation s(set);
+    s.Search();
 
     return 0;
 }
