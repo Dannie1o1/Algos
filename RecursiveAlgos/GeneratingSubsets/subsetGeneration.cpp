@@ -38,7 +38,7 @@ void search(int k, int n, vector<int> &subset)
     else
     {
         //include k in the subset
-        subset.push_back(k);
+         subset.push_back(k);
         search(k + 1, n, subset);
         subset.pop_back();
         //don't include k in the subset
