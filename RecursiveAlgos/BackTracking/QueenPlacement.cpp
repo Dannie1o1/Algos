@@ -29,8 +29,8 @@ void search(int y){
 int main(){
     //set global variables
     //using example from Guide to Competitive Programming
-    n = 16;
-    //cnt = 0;
+    n = 4;
+    cnt = 0;
     col.resize(n);
     diag1.resize(2*n);
     diag2.resize(2*n);
