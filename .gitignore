@@ -85,3 +85,6 @@ Temporary Items
 ### Custom Files
 *.txt
 !input.txt
+
+#Exclude Files
+Playground
