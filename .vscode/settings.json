@@ -16,6 +16,7 @@
         "chrono": "cpp",
         "limits": "cpp",
         "random": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "__bit_reference": "cpp"
     }
 }

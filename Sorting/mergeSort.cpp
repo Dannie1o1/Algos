@@ -2,7 +2,8 @@
 
 using namespace std;
 
-void merge(int arr[], int left, int mid , int right){
+void merge(int arr[], int left, int mid , int right)
+{
     
     //Sizes
     int leftArrSize = mid-left+1;
