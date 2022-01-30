@@ -6,7 +6,7 @@
 using namespace std;
 
 // Link: https://cses.fi/problemset/task/1084
-// Status: Solved
+// Status: Accepted
 
 int GetMaxAccommodationNumber(int numOfApplicants, int numOfApartments, int maxSizeDifference)
 {
